@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Sudoku tile icon">
+  <rect width="64" height="64" rx="10" fill="#f6ecd8"/>
+  <rect x="8" y="8" width="48" height="48" fill="#fffdf8" stroke="#4f3422" stroke-width="2.5"/>
+  <path d="M24 8v48M40 8v48M8 24h48M8 40h48" stroke="#4f3422" stroke-width="2.5"/>
+  <text x="17" y="21" font-size="9" font-family="Georgia,serif" fill="#1f2937">5</text>
+  <text x="33" y="37" font-size="9" font-family="Georgia,serif" fill="#1f2937">7</text>
+  <text x="17" y="53" font-size="9" font-family="Georgia,serif" fill="#1f2937">2</text>
+</svg>

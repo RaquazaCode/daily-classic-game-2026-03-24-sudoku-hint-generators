@@ -1,0 +1,142 @@
+:root {
+  color-scheme: light;
+  --bg: #f5efe4;
+  --panel: #fffdf7;
+  --ink: #312417;
+  --accent: #226f54;
+  --warn: #b42318;
+  --grid: #73563f;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Source Serif 4", "Georgia", serif;
+  background: radial-gradient(circle at top, #fff8eb 0%, var(--bg) 55%, #eadcc7 100%);
+  color: var(--ink);
+}
+
+.shell {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+.hero {
+  text-align: center;
+}
+
+.hero h1 {
+  margin-bottom: 0.35rem;
+}
+
+.hud {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(120px, 1fr));
+  gap: 0.5rem;
+  margin: 1rem 0;
+  padding: 0.75rem;
+  background: var(--panel);
+  border: 2px solid var(--grid);
+  border-radius: 10px;
+}
+
+.board-wrap {
+  display: grid;
+  grid-template-columns: minmax(280px, 520px) minmax(250px, 1fr);
+  gap: 1rem;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  background: var(--panel);
+  border: 3px solid var(--grid);
+}
+
+.cell {
+  aspect-ratio: 1;
+  border: 1px solid #bfa68a;
+  background: #fff;
+  color: #1f2937;
+  font-size: 1.35rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.cell:nth-child(3n) {
+  border-right: 2px solid var(--grid);
+}
+
+.cell:nth-child(n + 19):nth-child(-n + 27),
+.cell:nth-child(n + 46):nth-child(-n + 54) {
+  border-bottom: 2px solid var(--grid);
+}
+
+.cell[data-given="true"] {
+  background: #f0e3cf;
+}
+
+.cell[data-selected="true"] {
+  outline: 3px solid var(--accent);
+  outline-offset: -3px;
+}
+
+.cell[data-conflict="true"] {
+  color: var(--warn);
+  background: #ffe8e6;
+}
+
+.controls {
+  background: var(--panel);
+  border: 2px solid var(--grid);
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+.event {
+  min-height: 2.6rem;
+  font-weight: 600;
+}
+
+.digits {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+}
+
+.digit,
+.buttons button {
+  border: 1px solid var(--grid);
+  border-radius: 8px;
+  background: #fff;
+  padding: 0.55rem;
+  font: inherit;
+  cursor: pointer;
+}
+
+.digit[data-selected="true"] {
+  background: var(--accent);
+  color: #fff;
+}
+
+.buttons {
+  display: grid;
+  gap: 0.45rem;
+  margin-top: 0.75rem;
+}
+
+.help {
+  margin-top: 0.9rem;
+  font-size: 0.92rem;
+}
+
+@media (max-width: 900px) {
+  .board-wrap {
+    grid-template-columns: 1fr;
+  }
+}

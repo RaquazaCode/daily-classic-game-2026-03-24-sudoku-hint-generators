@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daily Classic Game - Sudoku Hint Generators</title>
+    <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="./src/styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <header class="hero">
+        <h1>Sudoku: Hint Generators</h1>
+        <p>Classic Sudoku with deterministic hint charge regeneration.</p>
+      </header>
+      <section class="hud" aria-label="game status">
+        <div><strong>Mode:</strong> <span id="mode">title</span></div>
+        <div><strong>Score:</strong> <span id="score">0</span></div>
+        <div><strong>High:</strong> <span id="high-score">0</span></div>
+        <div><strong>Mistakes:</strong> <span id="mistakes">0</span>/3</div>
+        <div><strong>Hints:</strong> <span id="hints">0</span></div>
+        <div><strong>Combo:</strong> <span id="combo">0</span></div>
+      </section>
+      <section class="board-wrap">
+        <div id="board" class="board" role="grid" aria-label="Sudoku board"></div>
+        <aside class="controls">
+          <p id="event" class="event">Press Enter to start</p>
+          <div class="digits" id="digits"></div>
+          <div class="buttons">
+            <button id="hint-btn" type="button">Use Hint (H)</button>
+            <button id="pause-btn" type="button">Pause (P)</button>
+            <button id="reset-btn" type="button">Reset (R)</button>
+          </div>
+          <p class="help">Select a cell, choose a number (1-9), and solve with up to 3 mistakes.</p>
+        </aside>
+      </section>
+    </main>
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>
